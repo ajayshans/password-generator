@@ -12,14 +12,8 @@ function generatePassword() {
   if (!userPasswordLength) {
     return;
   }
-  else if (isNaN(userPasswordLength)) {
-    alert("Error: Password length must be a number!");
-    return;
-  } else if (userPasswordLength > 128) {
-    alert("Error: Password length must be no more than 128 characters!");
-    return;
-  } else if (userPasswordLength < 8) {
-    alert("Error: Password length must be at least 8 characters!");
+  else if (isNaN(userPasswordLength) || userPasswordLength < 8 || userPasswordLength > 128) {
+    alert("Error: Password length must be a number between 8 and 128 characters inclusive!");
     return;
   } 
 
